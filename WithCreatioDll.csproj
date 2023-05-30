@@ -1,0 +1,853 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B924A167-4B94-48A4-9823-230D13EDC4CA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>WithCreatioDll</RootNamespace>
+    <AssemblyName>WithCreatioDll</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Akka">
+      <HintPath>dll\Akka.dll</HintPath>
+    </Reference>
+    <Reference Include="Akka.TestKit">
+      <HintPath>dll\Akka.TestKit.dll</HintPath>
+    </Reference>
+    <Reference Include="AngleSharp">
+      <HintPath>dll\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>dll\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extensions.DependencyInjection">
+      <HintPath>dll\Autofac.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoFixture">
+      <HintPath>dll\AutoFixture.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoFixture.NUnit3">
+      <HintPath>dll\AutoFixture.NUnit3.dll</HintPath>
+    </Reference>
+    <Reference Include="Automatonymous">
+      <HintPath>dll\Automatonymous.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>dll\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3">
+      <HintPath>dll\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Core">
+      <HintPath>dll\Azure.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Storage.Blobs">
+      <HintPath>dll\Azure.Storage.Blobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Storage.Common">
+      <HintPath>dll\Azure.Storage.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="BCrypt.Net-Next">
+      <HintPath>dll\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>dll\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>dll\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>dll\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.NLog45">
+      <HintPath>dll\Common.Logging.NLog45.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentSpace.SAML2">
+      <HintPath>dll\ComponentSpace.SAML2.dll</HintPath>
+    </Reference>
+    <Reference Include="CookComputing.XmlRpcV2">
+      <HintPath>dll\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Creatio.Client">
+      <HintPath>dll\Creatio.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Creatio.FeatureToggling">
+      <HintPath>dll\Creatio.FeatureToggling.dll</HintPath>
+    </Reference>
+    <Reference Include="Creatio.FeatureToggling.TestKit">
+      <HintPath>dll\Creatio.FeatureToggling.TestKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Creatio.FeatureToggling.TestKit.NUnit">
+      <HintPath>dll\Creatio.FeatureToggling.TestKit.NUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="Creatio.Messaging.MessageBus">
+      <HintPath>dll\Creatio.Messaging.MessageBus.dll</HintPath>
+    </Reference>
+    <Reference Include="Creatio.Messaging.MessageBus.RabbitMQ">
+      <HintPath>dll\Creatio.Messaging.MessageBus.RabbitMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.Core">
+      <HintPath>dll\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth">
+      <HintPath>dll\DotNetOpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamicExpresso.Core">
+      <HintPath>dll\DynamicExpresso.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Elasticsearch.Net">
+      <HintPath>dll\Elasticsearch.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>dll\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Fare">
+      <HintPath>dll\Fare.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport">
+      <HintPath>dll\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Compat">
+      <HintPath>dll\FastReport.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.DataVisualization">
+      <HintPath>dll\FastReport.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions">
+      <HintPath>dll\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="Gelf4Net">
+      <HintPath>dll\Gelf4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>dll\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Authentication.OAuth2">
+      <HintPath>dll\Google.Apis.Authentication.OAuth2.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Client">
+      <HintPath>dll\Google.GData.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Contacts">
+      <HintPath>dll\Google.GData.Contacts.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Extensions">
+      <HintPath>dll\Google.GData.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="GreenPipes">
+      <HintPath>dll\GreenPipes.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>dll\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizer">
+      <HintPath>dll\HtmlSanitizer.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityModel">
+      <HintPath>dll\IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="InfluxData.Net.Common">
+      <HintPath>dll\InfluxData.Net.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="InfluxData.Net.InfluxDb">
+      <HintPath>dll\InfluxData.Net.InfluxDb.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit">
+      <HintPath>dll\MassTransit.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.ExtensionsDependencyInjectionIntegration">
+      <HintPath>dll\MassTransit.ExtensionsDependencyInjectionIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.RabbitMqTransport">
+      <HintPath>dll\MassTransit.RabbitMqTransport.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagePack">
+      <HintPath>dll\MessagePack.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagePack.Annotations">
+      <HintPath>dll\MessagePack.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.OData">
+      <HintPath>dll\Microsoft.AspNet.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication">
+      <HintPath>dll\Microsoft.AspNetCore.Authentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Abstractions">
+      <HintPath>dll\Microsoft.AspNetCore.Authentication.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Cookies">
+      <HintPath>dll\Microsoft.AspNetCore.Authentication.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Core">
+      <HintPath>dll\Microsoft.AspNetCore.Authentication.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.CookiePolicy">
+      <HintPath>dll\Microsoft.AspNetCore.CookiePolicy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.Internal">
+      <HintPath>dll\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation">
+      <HintPath>dll\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection">
+      <HintPath>dll\Microsoft.AspNetCore.DataProtection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Abstractions">
+      <HintPath>dll\Microsoft.AspNetCore.DataProtection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions">
+      <HintPath>dll\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions">
+      <HintPath>dll\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http">
+      <HintPath>dll\Microsoft.AspNetCore.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions">
+      <HintPath>dll\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions">
+      <HintPath>dll\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features">
+      <HintPath>dll\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Identity">
+      <HintPath>dll\Microsoft.AspNetCore.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities">
+      <HintPath>dll\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>dll\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>dll\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>dll\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services">
+      <HintPath>dll\Microsoft.Data.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Toolkit">
+      <HintPath>dll\Microsoft.Data.Services.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.SqlClient">
+      <HintPath>dll\Microsoft.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration">
+      <HintPath>dll\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+      <HintPath>dll\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder">
+      <HintPath>dll\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection">
+      <HintPath>dll\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>dll\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions">
+      <HintPath>dll\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions">
+      <HintPath>dll\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Http">
+      <HintPath>dll\Microsoft.Extensions.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Identity.Core">
+      <HintPath>dll\Microsoft.Extensions.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging">
+      <HintPath>dll\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>dll\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool">
+      <HintPath>dll\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options">
+      <HintPath>dll\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives">
+      <HintPath>dll\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.WebEncoders">
+      <HintPath>dll\Microsoft.Extensions.WebEncoders.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client">
+      <HintPath>dll\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens">
+      <HintPath>dll\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging">
+      <HintPath>dll\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols">
+      <HintPath>dll\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect">
+      <HintPath>dll\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens">
+      <HintPath>dll\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers">
+      <HintPath>dll\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core">
+      <HintPath>dll\Microsoft.OData.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm">
+      <HintPath>dll\Microsoft.OData.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Spatial">
+      <HintPath>dll\Microsoft.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WebSockets">
+      <HintPath>dll\Microsoft.WebSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>dll\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Myrmec">
+      <HintPath>dll\Myrmec.dll</HintPath>
+    </Reference>
+    <Reference Include="Myrmec.Mime">
+      <HintPath>dll\Myrmec.Mime.dll</HintPath>
+    </Reference>
+    <Reference Include="Nest">
+      <HintPath>dll\Nest.dll</HintPath>
+    </Reference>
+    <Reference Include="NewId">
+      <HintPath>dll\NewId.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson">
+      <HintPath>dll\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>dll\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Factory">
+      <HintPath>dll\Ninject.Extensions.Factory.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>dll\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Extensions.Logging">
+      <HintPath>dll\NLog.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Extensions.Terrasoft">
+      <HintPath>dll\NLog.Extensions.Terrasoft.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Layouts.GelfLayout">
+      <HintPath>dll\NLog.Layouts.GelfLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Web">
+      <HintPath>dll\NLog.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>dll\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>dll\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>dll\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>dll\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Otp.NET">
+      <HintPath>dll\Otp.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="PerceptiveMCAPI">
+      <HintPath>dll\PerceptiveMCAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Pipelines.Sockets.Unofficial">
+      <HintPath>dll\Pipelines.Sockets.Unofficial.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly">
+      <HintPath>dll\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>dll\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz.Jobs">
+      <HintPath>dll\Quartz.Jobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz.Plugins">
+      <HintPath>dll\Quartz.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz.Plugins.TimeZoneConverter">
+      <HintPath>dll\Quartz.Plugins.TimeZoneConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>dll\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.Tools.Algorithmia">
+      <HintPath>dll\SD.Tools.Algorithmia.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.Tools.BCLExtensions">
+      <HintPath>dll\SD.Tools.BCLExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.Tools.OrmProfiler.Client.Core">
+      <HintPath>dll\SD.Tools.OrmProfiler.Client.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.Tools.OrmProfiler.Interceptor">
+      <HintPath>dll\SD.Tools.OrmProfiler.Interceptor.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.Tools.OrmProfiler.Shared">
+      <HintPath>dll\SD.Tools.OrmProfiler.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack">
+      <HintPath>dll\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>dll\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>dll\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface">
+      <HintPath>dll\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>dll\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStackWrapper">
+      <HintPath>dll\ServiceStackWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector">
+      <HintPath>dll\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis">
+      <HintPath>dll\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>dll\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager">
+      <HintPath>dll\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>dll\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.PerformanceCounter">
+      <HintPath>dll\System.Diagnostics.PerformanceCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>dll\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Hashing">
+      <HintPath>dll\System.IO.Hashing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory.Data">
+      <HintPath>dll\System.Memory.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>dll\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata">
+      <HintPath>dll\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml">
+      <HintPath>dll\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions">
+      <HintPath>dll\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial">
+      <HintPath>dll\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages">
+      <HintPath>dll\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels">
+      <HintPath>dll\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple" />
+    <Reference Include="System.Web.Http">
+      <HintPath>dll\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>dll\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Terrasoft.ActorSystem">
+      <HintPath>dll\Terrasoft.ActorSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.AppAnalytics">
+      <HintPath>dll\Terrasoft.AppAnalytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.AppDomainManagement">
+      <HintPath>dll\Terrasoft.AppDomainManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Authentication">
+      <HintPath>dll\Terrasoft.Authentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.CodeAnalyzer">
+      <HintPath>dll\Terrasoft.CodeAnalyzer.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Common">
+      <HintPath>dll\Terrasoft.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.ComponentSpace">
+      <HintPath>dll\Terrasoft.ComponentSpace.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.ComponentSpace.Interfaces">
+      <HintPath>dll\Terrasoft.ComponentSpace.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Configuration">
+      <HintPath>dll\Terrasoft.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Configuration.ODataEntities">
+      <HintPath>dll\Terrasoft.Configuration.ODataEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core">
+      <HintPath>dll\Terrasoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.ActorSystem">
+      <HintPath>dll\Terrasoft.Core.ActorSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.Applications">
+      <HintPath>dll\Terrasoft.Core.Applications.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.ClientContentGeneration">
+      <HintPath>dll\Terrasoft.Core.ClientContentGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.ConfigurationBuild">
+      <HintPath>dll\Terrasoft.Core.ConfigurationBuild.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.ContentGeneration">
+      <HintPath>dll\Terrasoft.Core.ContentGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.DI">
+      <HintPath>dll\Terrasoft.Core.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.DI.Bindings">
+      <HintPath>dll\Terrasoft.Core.DI.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.Entities.Services">
+      <HintPath>dll\Terrasoft.Core.Entities.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.Packages">
+      <HintPath>dll\Terrasoft.Core.Packages.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.Process">
+      <HintPath>dll\Terrasoft.Core.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.Process.ActorSystem">
+      <HintPath>dll\Terrasoft.Core.Process.ActorSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.Process.Serialization">
+      <HintPath>dll\Terrasoft.Core.Process.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.Scheduler">
+      <HintPath>dll\Terrasoft.Core.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.ScriptEngine">
+      <HintPath>dll\Terrasoft.Core.ScriptEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.ServerContentGeneration">
+      <HintPath>dll\Terrasoft.Core.ServerContentGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.ServiceModel">
+      <HintPath>dll\Terrasoft.Core.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.ServiceModelContract">
+      <HintPath>dll\Terrasoft.Core.ServiceModelContract.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Core.Translation">
+      <HintPath>dll\Terrasoft.Core.Translation.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.DB.MSSql">
+      <HintPath>dll\Terrasoft.DB.MSSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.DB.Oracle">
+      <HintPath>dll\Terrasoft.DB.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.DB.PostgreSql">
+      <HintPath>dll\Terrasoft.DB.PostgreSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.ElasticSearch">
+      <HintPath>dll\Terrasoft.ElasticSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.File">
+      <HintPath>dll\Terrasoft.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.File.Abstractions">
+      <HintPath>dll\Terrasoft.File.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.File.AzureBlobStorage">
+      <HintPath>dll\Terrasoft.File.AzureBlobStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.File.S3">
+      <HintPath>dll\Terrasoft.File.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.GlobalSearch">
+      <HintPath>dll\Terrasoft.GlobalSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.GoogleServerConnector">
+      <HintPath>dll\Terrasoft.GoogleServerConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.GoogleServices">
+      <HintPath>dll\Terrasoft.GoogleServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.IO">
+      <HintPath>dll\Terrasoft.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Messaging.Cluster">
+      <HintPath>dll\Terrasoft.Messaging.Cluster.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Messaging.Common">
+      <HintPath>dll\Terrasoft.Messaging.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Messaging.Common.Standard">
+      <HintPath>dll\Terrasoft.Messaging.Common.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Messaging.MicrosoftWSService">
+      <HintPath>dll\Terrasoft.Messaging.MicrosoftWSService.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Mobile">
+      <HintPath>dll\Terrasoft.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Monitoring">
+      <HintPath>dll\Terrasoft.Monitoring.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Nui">
+      <HintPath>dll\Terrasoft.Nui.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Nui.ServiceModel">
+      <HintPath>dll\Terrasoft.Nui.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Nui.ServiceModel.AspNetFramework">
+      <HintPath>dll\Terrasoft.Nui.ServiceModel.AspNetFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Nui.ServiceModel.WebService">
+      <HintPath>dll\Terrasoft.Nui.ServiceModel.WebService.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.OAuthIntegration">
+      <HintPath>dll\Terrasoft.OAuthIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Performance.Profiler">
+      <HintPath>dll\Terrasoft.Performance.Profiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Redis">
+      <HintPath>dll\Terrasoft.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Redis.Abstractions">
+      <HintPath>dll\Terrasoft.Redis.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Redis.AspNetFramework">
+      <HintPath>dll\Terrasoft.Redis.AspNetFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Redis.StackExchangeAdapters">
+      <HintPath>dll\Terrasoft.Redis.StackExchangeAdapters.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Reports">
+      <HintPath>dll\Terrasoft.Reports.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Security">
+      <HintPath>dll\Terrasoft.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Security.AspNet">
+      <HintPath>dll\Terrasoft.Security.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Security.Secrets">
+      <HintPath>dll\Terrasoft.Security.Secrets.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.ServiceBus">
+      <HintPath>dll\Terrasoft.ServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.ServiceBus.Abstractions">
+      <HintPath>dll\Terrasoft.ServiceBus.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Services">
+      <HintPath>dll\Terrasoft.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Social">
+      <HintPath>dll\Terrasoft.Social.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Store.WebAdapters">
+      <HintPath>dll\Terrasoft.Store.WebAdapters.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Svn">
+      <HintPath>dll\Terrasoft.Svn.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Sync">
+      <HintPath>dll\Terrasoft.Sync.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.TestFramework">
+      <HintPath>dll\Terrasoft.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.UI.Common">
+      <HintPath>dll\Terrasoft.UI.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.UI.Common.AspNetFramework">
+      <HintPath>dll\Terrasoft.UI.Common.AspNetFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.UI.Helpers">
+      <HintPath>dll\Terrasoft.UI.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.UI.WebControls.Compatibility.Interfaces">
+      <HintPath>dll\Terrasoft.UI.WebControls.Compatibility.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Web.Common">
+      <HintPath>dll\Terrasoft.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Web.Extensions">
+      <HintPath>dll\Terrasoft.Web.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Web.FileSecurity">
+      <HintPath>dll\Terrasoft.Web.FileSecurity.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Web.Http.Abstractions">
+      <HintPath>dll\Terrasoft.Web.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Web.Http.AspNetFramework">
+      <HintPath>dll\Terrasoft.Web.Http.AspNetFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.Web.OData">
+      <HintPath>dll\Terrasoft.Web.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.WebApp">
+      <HintPath>dll\Terrasoft.WebApp.dll</HintPath>
+    </Reference>
+    <Reference Include="Terrasoft.WebApp.ActorSystem">
+      <HintPath>dll\Terrasoft.WebApp.ActorSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeZoneConverter">
+      <HintPath>dll\TimeZoneConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="VaultSharp">
+      <HintPath>dll\VaultSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="1.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
