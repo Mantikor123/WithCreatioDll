@@ -10,6 +10,9 @@ namespace WithCreatioDll
     {
         static void Main(string[] args)
         {
+
+            AccountB24 AccountB24 = new AccountB24();
+            AccountB24.Account();
         }
     }
 }
